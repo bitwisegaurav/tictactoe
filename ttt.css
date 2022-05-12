@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&family=Roboto+Mono:wght@500&family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    background-color: rgb(17, 105, 105);
+    color: white;
+    height: 70px;
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+}
+nav ul{
+    list-style: none;
+}
+
+.gameContainer{
+    /* border: 2px solid red; */
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    /* align-items: center; */
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    position: relative;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+.box:hover{
+    background-color: rgb(184, 224, 224);
+}
+.info{
+    font-size: 1vw;
+}
+.gameinfo{
+    padding: 0 34px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+h1{
+    font-size: 3vw;
+}
+.imgbox img{
+    width: 0;
+    transition: width 1s ease-in;
+}
+
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+
+#reset{
+    margin: 0 24px;
+    padding: 0 20px;
+    font-size: 1vw;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    background-color: rgb(184, 224, 224);
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+#reset:hover{
+    background-color: rgb(17, 105, 105);
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .container{
+        grid-template-columns: repeat(3, 25vw);
+    grid-template-rows: repeat(3, 25vw);
+    }
+    .box{
+        font-size: 15vw;
+    }
+    .gameinfo{
+        margin-top: 50px;
+    }
+    h1{
+        font-size: 7vw;
+    }
+    .info{
+        font-size: 3vw;
+    }
+    #reset{
+        font-size: 3vw;
+    }
+}
