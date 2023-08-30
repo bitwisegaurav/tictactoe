@@ -46,10 +46,7 @@ Array.from(boxes).forEach(element => {
             if (!gameover) {
                 document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
             }
-            if (gameover === true) {
-                boxtext.innerText = "";
-            }
-            
+            checkDraw();
         }
     })
 })
@@ -58,6 +55,21 @@ reset.addEventListener('click', () => {
     let boxtexts = document.querySelectorAll('.boxtext');
     Array.from(boxtexts).forEach(element => {
         element.innerText = "";
+        gameover = false;
         document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
     })
 })
+
+function checkDraw() {
+    let boxtexts = document.querySelectorAll('.boxtext');
+    let count = 0;
+    Array.from(boxtexts).forEach(element => {
+        if (element.innerText === "") {
+            count++;
+        }
+    })
+    if (count === 0) {
+        gameover = true;
+        document.querySelector('.info').innerText = "Match Draw";
+    }
+}
